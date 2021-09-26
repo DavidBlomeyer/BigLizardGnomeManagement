@@ -265,6 +265,8 @@ namespace Komodo_Console
 
             // Add the new Person to the content
             _contentPeopleRepo.AddPersonToList(newContent);
+
+            // Confirm !!!
         }
 
         // PMM - Display all People
@@ -432,10 +434,11 @@ namespace Komodo_Console
             PeopleContent superadmin = new PeopleContent(0, "Alpha", "Omega", "Omega, Alpha", "0Omeg", "iamgodhere",
                 true);
             PeopleContent greg = new PeopleContent(1, "Greg", "Wolfe", "Wolfe, Greg", "1Wolf", "password", true);
-
+            PeopleContent paul = new PeopleContent(2, "Paul", "Buche", "Buche, Paul", "2Buch", "password", true);
 
             _contentPeopleRepo.AddPersonToList(superadmin);
             _contentPeopleRepo.AddPersonToList(greg);
+            _contentPeopleRepo.AddPersonToList(paul);
         }
 
         // Team Menu - (while loop) (needs closed)

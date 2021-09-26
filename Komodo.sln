@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		ContentSketch.md = ContentSketch.md
 		MenuSketch.md = MenuSketch.md
-		MyBrain.md = MyBrain.md
+		Project Map.md = Project Map.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_LogRepo", "LogRepo\05_LogRepo.csproj", "{E22FBABA-0928-47FA-B918-DC1DD406F219}"
