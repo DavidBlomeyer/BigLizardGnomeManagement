@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace PeopleRepo
 {
+    // (V)
     public enum AccessLevel
     {
         User = 1,           // look at basic stuff
@@ -14,11 +15,10 @@ namespace PeopleRepo
         SuperAdmin = 4      // all up to set access level 4
     }
 
-    //POCO
+    //POCO - (V)
     public class PeopleContent
     {
-        // variable definition
-
+        // Variable statement
         public int IDNumber { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -29,15 +29,12 @@ namespace PeopleRepo
         //public int Team { get; set; }
         //public AccessLevel TypeOfAccess { get; set; }
 
-        // zerod constructor
-
+        // Zerod constructor
         public PeopleContent() { }
 
-        // populated constructor
-                //name          //args
+        // Populated constructor
         public PeopleContent(int idNumber, string firstName, string lastName, string fullName, string id, string password, bool pluralsightAccess)
-        {   
-            // property // value // "population"
+        {
             IDNumber = idNumber;
             FirstName = firstName;
             LastName = lastName;

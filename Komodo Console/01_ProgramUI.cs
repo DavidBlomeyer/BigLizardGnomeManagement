@@ -13,7 +13,6 @@ using PeopleRepo;
 using TeamRepo;
 
 
-
 namespace Komodo_Console
 {
     // Startup
@@ -31,7 +30,7 @@ namespace Komodo_Console
             StartMenu();
         }
 
-        // Start Menu
+        // Start Menu - (while loop) (needs closed)
         private void StartMenu()
         {
             bool keepRunning = true;
@@ -70,19 +69,18 @@ namespace Komodo_Console
             }
         }
 
-        // Login Function - Optional
+        // Login Function - (Optional) (V)
+        // (inside StartMenu while loop)
         private void Login()
         {
             Console.Clear();
             Console.WriteLine("Please enter your user ID and Password.");
             Console.WriteLine("ID:");
-            string ID = Console.ReadLine();
-
-
+            string newID = Console.ReadLine();
             Console.WriteLine("Password");
-            string Password = Console.ReadLine();
+            string newPassword = Console.ReadLine();
 
-            if (ID == "ID" && Password == "Password") // MOCKUP
+            if (newID == "ID" && newPassword == "Password") // MOCKUP
             {
                 // verb = check for person in personRepo
 
@@ -90,16 +88,13 @@ namespace Komodo_Console
 
                 MainMenu();
             }
-
             else
             {
                 Console.WriteLine("Please enter a valid ID and password.");
             }
-
-
         }
 
-        // Main Menu
+        // Main Menu - (while loop) (needs closed) (V)
         private void MainMenu()
         {
             bool keepRunning = true;
@@ -110,7 +105,7 @@ namespace Komodo_Console
                 Console.WriteLine("Select a menu option\n" +
                                   "1. Do Developer Stuff\n" +
                                   "2. Do Team Stuff\n" +
-                                  "3. View the Log\n" +
+                                  //"3. View the Log\n" +
                                   "0. Log Out");
                 string inputA2 = Console.ReadLine();
 
@@ -124,10 +119,10 @@ namespace Komodo_Console
                         // Do team stuff
                         TeamMenu();
                         break;
-                    case "3":
+                    //case "3":
                         // View the Log
-                        LogMenu();
-                        break;
+                        //LogMenu();
+                        //break;
                     case "0":
                         // Log Out
                         StartMenu();
@@ -143,7 +138,7 @@ namespace Komodo_Console
             }
         }
 
-        // People Menu
+        // People Menu - (while loop)
         private void PeopleMenu()
         {
             bool keepRunning = true;
@@ -151,7 +146,7 @@ namespace Komodo_Console
             {
                 Console.Clear();
                 Console.WriteLine("Welcome to the Developer Management Menu. Choose an option.");
-                Console.WriteLine("Select a menu option\n" +
+                Console.WriteLine("Select a menu option.:\n" +
                                   "1. Add a Developer\n" +
                                   "2. Roster of All Developers\n" +
                                   "3. Fully Report on a Single Developer by IDNumber\n" +
@@ -202,9 +197,7 @@ namespace Komodo_Console
             }
         }
 
-        // People Menu Method Collection
-
-        // Create new Person
+        // PMM - Create new Person - (ID Number !) (V) (confirm !)
         private void CreateNewPerson()
         {
             Console.Clear();
@@ -224,7 +217,7 @@ namespace Komodo_Console
             string fullName = $"{lastName}, {firstName}";
             newContent.FullName = fullName;
 
-            //ID Number
+            //ID Number (needs check for used IDNumber)
             DisplayAllIDNumberFullNameIDContent();
             Console.WriteLine("\n" +
                               "These are all used IDNumbers.\n" +
@@ -240,9 +233,9 @@ namespace Komodo_Console
             newContent.ID = id;
 
             //Password - Optional
-            Console.WriteLine("What do you want to set for a password for this Developer?:\n" +
-                              "[If your not sure, use Password]");
-            newContent.Password = Console.ReadLine();
+            //Console.WriteLine("What do you want to set for a password for this Developer?:\n" +
+            //                  "[If your not sure, use Password]");
+            //newContent.Password = Console.ReadLine();
 
             //Pluralsight
             Console.WriteLine("Does the Developer have access to Pluralsight? (y/n):");
@@ -257,13 +250,13 @@ namespace Komodo_Console
                 newContent.PluralsightAccess = false;
             }
 
-            //Team              ???
+            //Team              
             //Console.WriteLine("Do you want to assign this Developer to a Team?:\n" +
             //                  "[If so, enter the team number (1, 2, 3, etc).  If not, enter (0)]");
             //string teamAsString = Console.ReadLine();
             //newContent.Team = int.Parse(teamAsString);
 
-            //Access Level      ???
+            //Access Level      
             //Console.WriteLine("What level of access do you want to assign to this Developer?:\n" +
             //                  "[1 = User, 2 = Manager 3 = Admin 4 = SuperAdmin]");
             //string accessAsString = Console.ReadLine();
@@ -274,7 +267,7 @@ namespace Komodo_Console
             _contentPeopleRepo.AddPersonToList(newContent);
         }
 
-        // Display all People
+        // PMM - Display all People
         private void DisplayAllIDNumberFullNameIDContent()
         {
             Console.Clear();
@@ -288,7 +281,7 @@ namespace Komodo_Console
             }
         }
 
-        // Display a single Person by IDNumber
+        // PMM - Display a single Person by IDNumber
         private void DisplayAPersonByIdNumber()
         {
             Console.Clear();
@@ -314,7 +307,7 @@ namespace Komodo_Console
             }
         }
 
-        // Display Pluralsight Report
+        // PMM - Display Pluralsight Report
         private void DisplayPluralsightReport()
         {
             Console.Clear();
@@ -328,7 +321,7 @@ namespace Komodo_Console
             }
         }
 
-        // Update Existing Person
+        // PMM - Update Existing Person - (ID Number !) (V) (confirm !)
         private void UpdateExistingPerson()
         {
             // Display People so a choice can be made without crying
@@ -357,7 +350,7 @@ namespace Komodo_Console
             string newfullName = $"{newLastName}, {newFirstName}";
             newContent.FullName = newfullName;
 
-            //ID Number
+            //ID Number - (needs check for used IDNumber)
             DisplayAllIDNumberFullNameIDContent();
             Console.WriteLine("\n" +
                               "These are all used IDNumbers.\n" +
@@ -411,7 +404,7 @@ namespace Komodo_Console
 
         }
 
-        // Delete Existing Person
+        // PMM - Delete Existing Person
         private void DeleteExistingPerson()
         {
             DisplayAllIDNumberFullNameIDContent();
@@ -433,7 +426,6 @@ namespace Komodo_Console
             }
         }
 
-
         // Seed People Method
         private void SeedPeopleList()
         {
@@ -446,8 +438,7 @@ namespace Komodo_Console
             _contentPeopleRepo.AddPersonToList(greg);
         }
 
-
-        // Team Menu
+        // Team Menu - (while loop) (needs closed)
         private void TeamMenu()
         {
             bool keepRunning = true;
@@ -501,15 +492,13 @@ namespace Komodo_Console
             }
         }
 
-        // Team Menu Method Collection
-
-        // Create a New Team                        !!!!!!!!!
+        // TMM - Create a New Team - (Team Number !) (confirm !)
         private void CreateNewTeam()
         {
             Console.Clear();
             TeamContent newContent = new TeamContent();
 
-            // Team Number
+            // Team Number - (needs check for used IDNumber)
             DisplayAllTeams();
             Console.WriteLine("\n" +
                               "What TeamNumber would you like to assign to this Team?:\n" + 
@@ -539,6 +528,7 @@ namespace Komodo_Console
 
             string input = Console.ReadLine();
             string[] pieces = input.Split(' ');
+
             List<int> intsList = new List<int>();
             int aNum;
 
@@ -556,7 +546,7 @@ namespace Komodo_Console
             _contentTeamRepo.AddTeamToList(newContent);             // ????
         }
 
-        // Display All Teams
+        // TMM - Display All Teams
         private void DisplayAllTeams()
         {
             Console.Clear();
@@ -569,17 +559,15 @@ namespace Komodo_Console
             }
         }
 
-        // Display a Single Team in Depth           !!!!!!!!!
+        // TMM - Display a Single Team in Depth - (Else/Confirm !)
         private void DisplaySingleTeam()
         {
             Console.Clear();
             DisplayAllTeams();
             Console.WriteLine("\n" +
                               "Enter the Team Number of the Team you'd like to see:");
-
             string teamNumber = Console.ReadLine();
             int teamNumberParsed = int.Parse(teamNumber);
-
 
             TeamContent teamContent = _contentTeamRepo.GetTeamByTeamNumber(teamNumberParsed);
 
@@ -587,7 +575,6 @@ namespace Komodo_Console
             {
                 Console.WriteLine($"Team Number: {teamContent.TeamNumber}\n" +
                                   $"Team Name: {teamContent.TeamName}");
-
                 for (int i = 0; i < teamContent.TeamMembers.Length; i++)
                 {
                     PeopleContent peopleContent = _contentPeopleRepo.GetPeopleByIdNumber(teamContent.TeamMembers[i]);
@@ -597,7 +584,6 @@ namespace Komodo_Console
                         Console.WriteLine($"ID Number: {peopleContent.IDNumber}\n" +
                                           $"Full Name: {peopleContent.FullName}");
                     }
-
                     //// else for exceptions
                 }
             }
@@ -607,7 +593,7 @@ namespace Komodo_Console
             }
         }
 
-        // Update a Team                        !!!!!!!!!2
+        // TMM - Update a Team - (needs mirrored from create) (Team Number !) (conform !)
         private void UpdateATeam()
         {
             // Display all teams
@@ -660,7 +646,7 @@ namespace Komodo_Console
             Console.ReadLine();
         }
 
-        // Delete a Team
+        // TMM - Delete a Team
         private void DeleteATeam()
         {
             // show all teams
@@ -703,7 +689,7 @@ namespace Komodo_Console
             _contentTeamRepo.AddTeamToList(Sharks);
         }
 
-        // Log Menu                     - Optional
+        // Log Menu - (while loop) (needs closed) (V)
         private void LogMenu()
         {
             bool keepRunning = true;
@@ -752,10 +738,5 @@ namespace Komodo_Console
             Console.ReadKey();
             Console.Clear();
         }
-
-        // Log Menu Method Collection
-
-
-
     }
 }

@@ -1,9 +1,7 @@
 A. Hello
-
 	1. Login - Optional
 		a. ID
 		b. Password 
-
 			A2. What you wanna do?
 				1. Do People Stuff
 					A3. What would you like to do?

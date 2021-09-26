@@ -11,30 +11,28 @@ namespace PeopleRepo
         private List<PeopleContent> _listOfPeople = new List<PeopleContent>();
 
         //C
-
         public void AddPersonToList(PeopleContent content)
         {
             _listOfPeople.Add(content);
         }
 
         //R
-
         public List<PeopleContent> GetPeopleList()
         {
             return _listOfPeople;
         }
 
-        //U
-
+        //U - (!)
         public bool UpdateExistingPeople(int originalIdNumber, PeopleContent newContent)
         {
             // Find the content
             PeopleContent oldContent = GetPeopleByIdNumber(originalIdNumber);
-
             // Update the content
             if (oldContent != null)
             {
                 // EMPTY THING
+
+
                 return true;
             }
             else
@@ -44,7 +42,6 @@ namespace PeopleRepo
         }
 
         //D
-
         public bool RemoveContentFromList(int idNumber)
         {
             PeopleContent content = GetPeopleByIdNumber(idNumber);
