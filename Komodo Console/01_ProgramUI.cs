@@ -235,7 +235,7 @@ namespace Komodo_Console
             newContent.IDNumber = idNumber;
 
             //ID
-            string lastFour = lastName.Substring(0, 4); // TUNED
+            string lastFour = lastName.Substring(0, lastName.Length > 4 ? 4 : lastName.Length);
             string id = $"{idNumber}{lastFour}";
             newContent.ID = id;
 
@@ -368,7 +368,7 @@ namespace Komodo_Console
             newContent.IDNumber = idNumber;
 
             //ID
-            string lastFour = newLastName.Substring(0, 4);
+            string lastFour = newLastName.Substring(0, newLastName.Length > 4 ? 4 : newLastName.Length);
             string id = $"{idNumber}{lastFour}";
             newContent.ID = id;
 
@@ -588,21 +588,18 @@ namespace Komodo_Console
                 Console.WriteLine($"Team Number: {teamContent.TeamNumber}\n" +
                                   $"Team Name: {teamContent.TeamName}");
 
-                int membersInTeam = 1; // needs to pull TeamMembers from list
-
-                foreach (TeamContent.TeamMember = teamNumberParsed)
+                for (int i = 0; i < teamContent.TeamMembers.Length; i++)
                 {
-                    
+                    PeopleContent peopleContent = _contentPeopleRepo.GetPeopleByIdNumber(teamContent.TeamMembers[i]);
+
+                    if (peopleContent != null)
+                    {
+                        Console.WriteLine($"ID Number: {peopleContent.IDNumber}\n" +
+                                          $"Full Name: {peopleContent.FullName}");
+                    }
+
+                    //// else for exceptions
                 }
-
-                PeopleContent peopleContent = _contentPeopleRepo.GetPeopleByIdNumber(membersInTeam);
-
-                if (peopleContent != null)
-                {
-                    Console.WriteLine($"ID Number: {peopleContent.IDNumber}\n" +
-                                      $"Full Name: {peopleContent.FullName}");
-                }
-
             }
             else
             {
