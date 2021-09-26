@@ -4,7 +4,7 @@ A. People
 		a. firstName (string)
 		b. lastName (string)
 		c. fullName (composite string)
-	2. ID (paresed string)
+	2. ID (parsed string)
 	3. Password (string) - Optional
 	4. Pluralsight (bool)
 	5. Team Assignment (int) - Optional
