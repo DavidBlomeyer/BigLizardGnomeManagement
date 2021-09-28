@@ -7,7 +7,7 @@ A. People
 	2. ID (parsed string)
 	3. Password (string) - Optional
 	4. Pluralsight (bool)
-	5. Team Assignment (int) - Optionala
+	5. Team Assignment (int) - Optional
 	6. Access Level (int) - Optional
 
 B. Teams

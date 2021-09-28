@@ -30,7 +30,7 @@ A. Hello
 
 						0. Return to A2
 
-				3. Examine Log - Optional
+				3. Do Log Stuff - Optional
 					A5. What would you like to do?
 						1a. Display Recent Log R
 						1b. Display Entire Log R
