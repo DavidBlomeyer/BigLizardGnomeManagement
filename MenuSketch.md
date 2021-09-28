@@ -38,7 +38,7 @@ A. Hello
 						2a. Display Log for Who R
 						2b. Display Log for What R
 
-						3. Return to A2
+						0. Return to A2
 
 				0. Log Out : Return to A. - Optional
 	0. Exit

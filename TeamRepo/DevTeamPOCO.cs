@@ -14,8 +14,6 @@ namespace TeamRepo
         public int TeamNumber { get; set; }
         public int[] TeamMembers { get; set; }
 
-
-
         // zerod constructor
         public TeamContent()
         {

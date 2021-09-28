@@ -63,7 +63,6 @@ namespace TeamRepo
             }
         }
 
-
         //Helper method
         public TeamContent GetTeamByTeamNumber(int teamNumber)
         {

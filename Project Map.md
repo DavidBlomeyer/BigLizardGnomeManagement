@@ -50,7 +50,6 @@ Is not a free standing .exe
 Migrate Methods from Program UI to the Repos
 Maybe forms for UI
 Get more sleep
-Odd files in Git repo - FIXED
 
 
 AAR - (after action review)
