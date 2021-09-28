@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_KomodoConsole", "Komodo Console\01_KomodoConsole.csproj", "{A04DDBFA-9649-4022-A363-07DA3B9E234B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_PeopleRepo", "PeopleRepo\03_PeopleRepo.csproj", "{BDE805EF-E815-4597-8BCB-7237761CAE98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_DeveloperRepo", "PeopleRepo\03_DeveloperRepo.csproj", "{BDE805EF-E815-4597-8BCB-7237761CAE98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_TeamRepo", "TeamRepo\04_TeamRepo.csproj", "{CC37BE76-DC17-427E-9F3B-2E83E87ACB8D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_DevTeamRepo", "TeamRepo\04_DevTeamRepo.csproj", "{CC37BE76-DC17-427E-9F3B-2E83E87ACB8D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_KomodoTest", "KomodoTest\02_KomodoTest.csproj", "{EFE6002D-64B4-4343-BF31-F3E3A8E308B4}"
 EndProject

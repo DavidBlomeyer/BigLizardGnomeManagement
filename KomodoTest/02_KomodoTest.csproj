@@ -64,13 +64,13 @@
       <Project>{e22fbaba-0928-47fa-b918-dc1dd406f219}</Project>
       <Name>05_LogRepo</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PeopleRepo\03_PeopleRepo.csproj">
+    <ProjectReference Include="..\PeopleRepo\03_DeveloperRepo.csproj">
       <Project>{bde805ef-e815-4597-8bcb-7237761cae98}</Project>
-      <Name>03_PeopleRepo</Name>
+      <Name>03_DeveloperRepo</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TeamRepo\04_TeamRepo.csproj">
+    <ProjectReference Include="..\TeamRepo\04_DevTeamRepo.csproj">
       <Project>{cc37be76-dc17-427e-9f3b-2e83e87acb8d}</Project>
-      <Name>04_TeamRepo</Name>
+      <Name>04_DevTeamRepo</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

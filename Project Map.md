@@ -37,6 +37,7 @@ Key -
 
 Known Issues/To Do For the Future -
 
+While File Names are consitent with the assignment, the namespaces and some naming is not.
 Some inputs (not using an input one example) can throw exceptions - (not mapped) or (handled)
 While Loops are left open by menus (not an issue here, but sloppy)
 Create and Update Commands work, but do not currently have coded confirmations

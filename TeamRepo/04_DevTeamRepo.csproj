@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BDE805EF-E815-4597-8BCB-7237761CAE98}</ProjectGuid>
+    <ProjectGuid>{CC37BE76-DC17-427E-9F3B-2E83E87ACB8D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PeopleRepo</RootNamespace>
-    <AssemblyName>PeopleRepo</AssemblyName>
+    <RootNamespace>TeamRepo</RootNamespace>
+    <AssemblyName>TeamRepo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="People.cs" />
-    <Compile Include="PeopleRepo.cs" />
+    <Compile Include="DevTeamPOCO.cs" />
+    <Compile Include="DevTeamRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
