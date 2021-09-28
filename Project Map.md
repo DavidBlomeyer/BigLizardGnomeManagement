@@ -23,7 +23,6 @@ Code Flow Diagram -
 		LogRepo.cs - ML - CRUD
 
 
-
 Key -
 
 ( )				( ) - Note pertaining to this section of code. Generally, should identify where in code and what action needed.
@@ -35,6 +34,21 @@ Key -
 (Words !) 		Important Issue - This section of code has a known issue that needs fixed but is not critical. (Important but not Urgent)
 (Words !!!)		Critical Issue - This section of code has a critical issue. (Important and Urgent)
 
+
+Known Issues/To Do For the Future -
+
+Some inputs (not using an input one example) can throw exceptions - (not mapped) or (handled)
+While Loops are left open by menus (not an issue here, but sloppy)
+Create and Update Commands work, but do not currently have coded confirmations
+Password, Access Level, and Log Functions Incomplete and Currently (V)
+Both "U"'s in the CRUD's currently work but are not used in the current Code
+Console.WriteLine "UI TEXT" is not 100% consistent - '.'s are sometimes there, sometimes not - (not mapped)
+Test Method basically unused.
+Does not save data - research bookmarked JSON libary
+Is not a free standing .exe
+Migrate Methods from Program UI to the Repos
+Maybe forms for UI
+Get more sleep
 
 
 AAR - (after action review)

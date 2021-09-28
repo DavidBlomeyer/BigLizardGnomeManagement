@@ -24,9 +24,9 @@ namespace TeamRepo
         }
 
         //U
-        public bool UpdateExistingTeam(int origionalNumber, TeamContent newContent)
+        public bool UpdateExistingTeam(int origionalTeamNumber, TeamContent newContent)
         {
-            TeamContent oldContent = GetTeamByTeamNumber(origionalNumber);
+            TeamContent oldContent = GetTeamByTeamNumber(origionalTeamNumber);
 
             if (oldContent != null)
             {

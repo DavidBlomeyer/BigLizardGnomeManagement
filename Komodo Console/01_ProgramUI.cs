@@ -37,7 +37,8 @@ namespace Komodo_Console
             while (keepRunning)
             {
                 Console.Clear();
-                Console.WriteLine("Hello.  Welcome to the Komodo Insurance Developer Team Management App.");
+                Console.WriteLine("     Hello.  Welcome to the Komodo Insurance Developer Team Management App.\n" +
+                                  "**********************************************************************************\n");
                 Console.WriteLine("Please Login to Get Started!");
                 Console.WriteLine("Select a menu option\n" +
                                   "1. Login\n" +
@@ -69,23 +70,25 @@ namespace Komodo_Console
             }
         }
 
-        // Login Function - (Optional) (V)
+        // Login Function - (Optional) (V) (P)
         // (inside StartMenu while loop)
         private void Login()
         {
             Console.Clear();
-            Console.WriteLine("Please enter your user ID and Password.");
+            Console.WriteLine("Please enter your user ID and Password.\n" +
+                              "[ 'ID' and 'Password' to bypass ]");
             Console.WriteLine("ID:");
             string newID = Console.ReadLine();
             Console.WriteLine("Password");
             string newPassword = Console.ReadLine();
 
-            if (newID == "ID" && newPassword == "Password") // MOCKUP
+            if (newID == "ID" && newPassword == "Password") // (P)
             {
-                // verb = check for person in personRepo
+                // Method = check for person in personRepo
+                // Method = check password for given person in personRepo
+                // Method = If good, pull for AccessLevel for said dev -> save ID and Accesslevel to Accessible Vars
 
-                // verb = check password for given person in personRepo
-
+                // Close StartMenu While Loop
                 MainMenu();
             }
             else
@@ -113,18 +116,22 @@ namespace Komodo_Console
                 {
                     case "1":
                         // Do people stuff
+                        // Close MainMenu While Loop
                         PeopleMenu();
                         break;
                     case "2":
                         // Do team stuff
+                        // Close MainMenu While Loop
                         TeamMenu();
                         break;
                     //case "3":
                         // View the Log
-                        //LogMenu();
+                        // Close MainMenu While Loop
+                        //LogMenu(); (P)
                         //break;
                     case "0":
                         // Log Out
+                        // Close MainMenu While Loop
                         StartMenu();
                         break;
                     default:
@@ -184,6 +191,7 @@ namespace Komodo_Console
                         break;
                     case "0":
                         // Exit
+                        // Close PeopleMenu While Loop
                         MainMenu();
                         break;
                     default:
@@ -400,10 +408,10 @@ namespace Komodo_Console
 
             // Delete Old Content
             _contentPeopleRepo.RemoveContentFromList(oldIDNumberParsed);
-
             // Add New Content
             _contentPeopleRepo.AddPersonToList(newContent);
 
+            // Confirm !!!
         }
 
         // PMM - Delete Existing Person
@@ -482,6 +490,7 @@ namespace Komodo_Console
                         break;
                     case "0":
                         // Exit
+                        // Close TeamMenu While Loop
                         MainMenu();
                         break;
                     default:
@@ -495,7 +504,7 @@ namespace Komodo_Console
             }
         }
 
-        // TMM - Create a New Team - (Team Number !) (confirm !)
+        // TMM - Create a New Team - (Team Number Dup !) (confirm did !)
         private void CreateNewTeam()
         {
             Console.Clear();
@@ -546,7 +555,9 @@ namespace Komodo_Console
             newContent.TeamMembers = magicArray;
 
             // Make it so
-            _contentTeamRepo.AddTeamToList(newContent);             // ????
+            _contentTeamRepo.AddTeamToList(newContent);
+
+            // Confirm !!!
         }
 
         // TMM - Display All Teams
@@ -596,7 +607,7 @@ namespace Komodo_Console
             }
         }
 
-        // TMM - Update a Team - (needs mirrored from create) (Team Number !) (conform !)
+        // TMM - Update a Team - (Team Number Dup !) (conform did !)
         private void UpdateATeam()
         {
             // Display all teams
@@ -634,19 +645,37 @@ namespace Komodo_Console
             // Team Members
             DisplayAllIDNumberFullNameIDContent();
             Console.WriteLine("\n" +
-                              $"Which Developer(s) would you like to add to the {nInput}s?:\n" + 
-                              "[Format is (IDNumber, IDNumber, etc) ie (1, 2, 3, 4)]");
-            
-                    // ???
+                              $"Which Developer(s) would you like to add to the {nInput}s?:\n" +
+                              "[Format is IDNumbers separated by spaces 'IDNumber IDNumber etc' ie '1 2 3 4']\n" +
+                              "[If you don't want to add any, leave it blank.]\n" +
+                              "[If you want to add one, list one.]");
 
-            // delete old data
+            //string fakeInput = "1 2 3 4 5 6 7 8 9 10 11 12";
+
+            string input = Console.ReadLine();
+            string[] pieces = input.Split(' ');
+
+            List<int> intsList = new List<int>();
+            int aNum;
+
+            foreach (string s in pieces)
+            {
+                if (Int32.TryParse(s, out aNum))
+                    intsList.Add(aNum);
+            }
+
+            int[] magicArray = intsList.ToArray();
+
+            newContent.TeamMembers = magicArray;
+
+            // Make it so
             _contentTeamRepo.RemoveTeamFromList(oldTeamNumberParsed);
-
-            // add new data
-            _contentTeamRepo.AddTeamToList(newContent);
+            _contentTeamRepo.AddTeamToList(newContent);       
 
             Console.WriteLine("Team Updated. Press any key to continue.");
             Console.ReadLine();
+
+            // Confirm !!!
         }
 
         // TMM - Delete a Team
@@ -692,7 +721,7 @@ namespace Komodo_Console
             _contentTeamRepo.AddTeamToList(Sharks);
         }
 
-        // Log Menu - (while loop) (needs closed) (V)
+        // Log Menu - (while loop) (needs closed) (V) (P)
         private void LogMenu()
         {
             bool keepRunning = true;
